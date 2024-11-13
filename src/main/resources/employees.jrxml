@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employees" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e73b25ea-e584-4729-9db7-6b5e8818cd6b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<field name="idCapgemini" class="java.lang.Long"/>
+	<field name="userFirstName" class="java.lang.String"/>
+	<field name="userLastName" class="java.lang.String"/>
+	<field name="emailCapgemini" class="java.lang.String"/>
+	<field name="emailPerso" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="d0740917-a36b-42e7-bf09-06dc129c4a2b"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="034691b7-7136-4b24-8c10-7c2c91eee235"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Capgemini]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="5076cd08-c342-45a0-ac29-40e96627a74f"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Employees Reports]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="f3d3d115-41e7-46d3-8476-6fe7fb8f0b3c"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="0" width="40" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="49e47f44-a9b2-4700-a2fa-9d515b54cce1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e10dde9f-f867-445f-ae64-0cc5d5149f7d"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="0" width="90" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="54068be0-6244-4c95-a29b-f7d9070a57d4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70b7d8cd-1157-4189-91f3-7869e3d37d0c"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="210" y="0" width="186" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4530c815-d141-4da8-8759-1227ebc49a41">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="39e3724c-3ff0-4d87-9973-34bc6b748d74"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-mail capgemini]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="396" y="0" width="179" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="db08dc69-d777-4abc-9189-ae46f61adeb7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="91a9b9ae-cd51-49ec-a0b9-1a3d9b4adfc7"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-mail personnel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="20" y="0" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1943163c-6157-4e1c-9123-11129f273ad3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d16692a-d7ce-4ccd-b203-cc144feb8f20"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prénom]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="-20" y="20" width="595" height="1" uuid="f7476c62-3d2f-47cd-9a29-8e7a6ffcf9aa"/>
+			</line>
+			<textField>
+				<reportElement x="20" y="0" width="100" height="20" uuid="4aea3abe-960d-4826-a80b-2e7c8c802268">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3d16692a-d7ce-4ccd-b203-cc144feb8f20"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userFirstName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="90" height="20" uuid="da2f8f5a-fa1d-4d49-9418-9e4f670596f6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70b7d8cd-1157-4189-91f3-7869e3d37d0c"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{userLastName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="0" width="186" height="20" uuid="96c40325-7b7c-4123-8111-7590b9a86a22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="39e3724c-3ff0-4d87-9973-34bc6b748d74"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emailCapgemini}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="0" width="179" height="20" uuid="c57f5868-94b8-4f78-a89a-bdea821adcd7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="91a9b9ae-cd51-49ec-a0b9-1a3d9b4adfc7"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emailPerso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-11" y="0" width="50" height="20" uuid="0b601bf9-7244-4605-9600-4ae510697831">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e10dde9f-f867-445f-ae64-0cc5d5149f7d"/>
+				</reportElement>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idCapgemini}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="27">
+			<textField>
+				<reportElement mode="Opaque" x="-20" y="4" width="534" height="13" backcolor="#E6E6E6" uuid="4c467e14-c8a8-4c24-b918-0bc2991851b2"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="55" height="13" backcolor="#E6E6E6" uuid="77081aac-3029-4e1e-9aa5-c9981c0ed234"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="33e3b503-033d-4470-8b6d-c3d9c7935d4e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
