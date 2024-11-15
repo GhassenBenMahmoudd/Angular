@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Liste des formations</b>
+            <button *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])"
+                routerLink="/ajouter-formation" class="btn btn-light" style="margin-left:800px"><i
+                    class="fa fa-plus icon"></i> Formation</button>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <div class="col-lg-3">
+                    <input type="text" class="form-control" placeholder="Search"
+                        style="margin-left:800px;border-radius: 20px;" [(ngModel)]="searchTerm" />
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Libellé</th>
+                        <th>Sujet</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        *ngFor="let formation of formations | filter:searchTerm | paginate: { itemsPerPage: 10, currentPage: pages}">
+                        <td>{{formation.libelle}}</td>
+                        <td>
+                            <span *ngIf="formation.sujet.length <= 90">{{ formation.sujet }}</span>
+                            <span *ngIf="formation.sujet.length > 90">{{ formation.sujet.slice(0, 80) }}...</span>
+                        </td>
+                                                <td class="actions">
+                            <button *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])"
+                                class="update" (click)="updateFormation(formation.idFormation)">
+                                <i class="fa fa-pen"></i>
+                            </button>
+                            <button class="details" (click)="formationDetails(formation.idFormation)">
+                                <i class="fa fa-eye"></i>
+                            </button>
+                            <button *ngIf="userService.roleMatch(['Admin'])" class="delete"
+                                (click)="annulerFormation(formation.idFormation)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <pagination-controls (pageChange)="pages = $event" style="text-align: center;"></pagination-controls>
+    </div>
+</div>

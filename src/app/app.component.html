@@ -1,0 +1,13 @@
+<app-header></app-header>
+<main>
+    <app-side-nav *ngIf="isLoggedIn()" ></app-side-nav>
+    <div class="display-area p-3" *ngIf="isLoggedIn()" >
+        <router-outlet></router-outlet>
+    </div>
+    <div *ngIf="!isLoggedIn()" >
+        <router-outlet></router-outlet>
+    </div>
+</main>
+
+
+

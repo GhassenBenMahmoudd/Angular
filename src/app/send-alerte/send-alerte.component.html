@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Créer une alerte </b>
+            
+        </div>   
+        <div class="card-body">
+            <div class="container"> 
+    <form (ngSubmit) = "submit()">
+            
+        <div class="form-group">
+            <label> Employé </label>
+            <select class="form-control" [(ngModel)]="employeeSelected" class="form-control" name="employeeSelected">
+                <option *ngFor="let employee of employees" [ngValue]="employee">{{ employee.idCapgemini }} : {{ employee.userFirstName }} {{ employee.userLastName }}</option>
+              </select>
+        </div>
+        <div class="form-group">
+            <label> Message </label>
+            <textarea type="text" class="form-control" id="msg" [(ngModel)]="message.msg" name="msg"></textarea>
+        </div>
+       
+
+        <div class="text-right">
+        <button class="btn btn-success" type="submit">Envoyer</button>
+        </div>
+
+    </form>
+</div>
+    </div>
+    </div>
+    </div>
+    

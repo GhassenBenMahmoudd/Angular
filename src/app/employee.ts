@@ -1,0 +1,48 @@
+import { Contrat } from "./contrat";
+import { Departement } from "./departement";
+import { Manager } from "./manager";
+import { Role } from "./role";
+import { Session } from "./session";
+
+export class Employee {
+    emailCapgemini?: String;
+    idCapgemini?:number;
+    userFirstName?: String;
+    userLastName?: String;
+    userPassword?: String;
+    idPayroll?: number;
+    emailPerso?: String;
+    cin?: String;
+    genre?: String;
+    dateNaissance?: Date;
+    profil?: String;
+    expAnt? : number;
+    ancienneteATC? : number;
+    situationFamiliale? : String;
+    nbEnfant?: number;
+    diplome?: String;
+    promotion?: Date;
+    ecole? : String;
+    telPerso? : number;
+    passportExpired? :Date;
+    visaExpired?: Date;
+    telPro?: number;
+    professionalCommunity? : String;
+    roleFamily?: String;
+    jobName?: String;
+    image?: String;
+    titreAdmin?: String;
+    newPassword?: String;
+    confirmNewPassword?: String;
+    classement?: String;
+    skills?: String;
+    l1?: String;
+    l2?: String;
+    ncr?: String;
+    grade?: String;
+    role?: Role[];
+    session?: Session[];
+    contrat?: Contrat[];
+    manager?: Manager;
+    departement?: Departement;
+}

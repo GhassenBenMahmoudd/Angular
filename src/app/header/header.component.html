@@ -1,0 +1,55 @@
+<nav *ngIf="! isLoggedIn()" class="navbar navbar-expand px-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img style="width: 100%; height:40px" src="/assets/Capgemini.png"></a>
+  </div>
+</nav>
+<nav *ngIf="isLoggedIn()" class="navbar navbar-expand px-2">
+
+  <a class="navbar-brand" routerLink="/dashboard"><img style="width: 100%; height:40px" src="/assets/Capgemini.png"></a>
+
+
+
+  <div class="d-flex justify-content-end ml-auto">
+
+    <div class="nav-item dropdown"  *ngIf="userService.roleMatch(['Admin']) ">
+      <a class="nav-link dropdown-toggle hidden-arrow" data-toggle="dropdown" href="#" style="margin-left: 100px;"><i
+          class="fas fa-bell" style="color: white;"></i>
+        <span class="badge rounded-pill badge-notification bg-danger">{{notificationCount}}</span>
+      </a>
+      <ul class="dropdown-menu" style="width: 350px">
+        <b style="margin-left: 10px; font-size: 25px;">Notifications</b>
+        <a class="dropdown-item text-right" href="#" style="color: dodgerblue;" routerLink="/list-notification">Voir tout</a>
+          <li *ngFor="let notif of notifications" [ngClass]="{'unread': !notif.vu}">
+          <a class="dropdown-item" (click)="markAsRead(notif.idNotification)" routerLink="/list-notification">{{notif.user.userFirstName}} {{notif.user.userLastName}}
+
+            {{notif.message}}<br>
+            <small class="text-muted">{{notif.date | date}}</small>
+          </a>
+        </li>        
+      </ul>
+    </div>
+    <div class="nav-item dropdown"  *ngIf="userService.roleMatch(['Employé']) || userService.roleMatch(['Opérateur RH']) || userService.roleMatch(['Manager'])">
+      <a class="nav-link dropdown-toggle hidden-arrow" data-toggle="dropdown" href="#" style="margin-left: 100px;"><i
+          class="fas fa-bell" style="color: white;"></i>
+        <span class="badge rounded-pill badge-notification bg-danger">{{messageCount}}</span>
+      </a>
+      <ul class="dropdown-menu" style="width: 350px">
+        <b style="margin-left: 10px; font-size: 25px;">Notifications</b>
+        <a class="dropdown-item text-right" href="#" style="color: dodgerblue;" routerLink="/list-message">Voir tout</a>
+          <li *ngFor="let message of messages" [ngClass]="{'unread': !message.vu}">
+          <a class="dropdown-item" (click)="markMessageAsRead(message.idMessage)" routerLink="/list-message">{{message.msg}}
+
+            <br>
+            <small class="text-muted">{{message.date | date}}</small>
+          </a>
+        </li>        
+      </ul>
+    </div>
+    <a class="nav-link active" routerLink="/profile"><i class="fa fa-user-circle" style="color: white; "><b
+          style="margin-left: 5px;color: white; font-size: 20px;">{{employee.userFirstName}}</b></i></a>
+    <a class="nav-link" (click)="logout()"><i class="fa fa-sign-out-alt fa-lg" style="color: white;"><b
+          style="margin-left: 5px;">Se deconnécter</b></i></a>
+
+  </div>
+
+</nav>

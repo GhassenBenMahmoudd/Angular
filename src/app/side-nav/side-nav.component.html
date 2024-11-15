@@ -1,0 +1,64 @@
+<div class="side-nav-content">
+    <ul class="nav-list">
+        <li class="nav-list-item">
+            <a routerLink="/dashboard"><i class="fa fa-bar-chart"></i></a>
+            <span>
+                <a routerLink="/dashboard" href="#" >Accueil</a>
+            </span>
+        </li>
+        <li class="nav-list-item" *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])">
+            <a routerLink="/list-employees" ><i class="fas fa-users"></i></a>
+            <span>
+                <a routerLink="/list-employees" href="#" >Liste des employés</a>
+            </span>
+        </li>
+        <li class="nav-list-item" *ngIf="userService.roleMatch(['Manager'])">
+            <a routerLink="/list-user-manager"><i class="fas fa-users"></i></a>
+            <span>
+                <a routerLink="/list-user-manager" href="#">Liste des employés</a>
+            </span>
+        </li>
+        <li class="nav-list-item">
+            <a routerLink="/list-formation"> <i class="fas fa-list"></i></a>
+            <span>
+                <a routerLink="/list-formation" href="#" >Liste des formations</a>
+            </span>
+        </li>
+        <li class="nav-list-item" *ngIf="userService.roleMatch(['Admin'])">
+            <a routerLink="/pointage" ><i class="fas fa-business-time"></i></a>
+            <span>
+                <a routerLink="/pointage" href="#" >Liste des pointages</a>
+            </span>
+        </li>
+        <li class="nav-list-item" *ngIf="userService.roleMatch(['Admin'])">
+            <a routerLink="/list-rapport" ><i class="fas fa-print"></i></a>
+            <span>
+                <a routerLink="/list-rapport" href="#" >Liste des rapport</a>
+            </span>
+        </li>
+        
+        <li class="nav-list-item">
+            <a routerLink="/calendar"><i class="fa fa-calendar" aria-hidden="true"></i>
+            </a>
+            <span>
+                <a routerLink="/calendar" href="#">Liste des évenements</a>
+            </span>
+        </li>
+        <li class="nav-list-item" *ngIf="userService.roleMatch(['Employé']) || userService.roleMatch(['Manager']) || userService.roleMatch(['Opérateur RH'])">
+            <a routerLink="/reset-password" (click)="changePass(employee.idCapgemini)"><i class="fa fa-cog" aria-hidden="true"></i>
+            </a>
+            <span>
+                <a routerLink="/reset-password" (click)="changePass(employee.idCapgemini)" href="#">Paramètres</a>
+            </span>
+        </li>
+        <li class="nav-list-item" *ngIf="userService.roleMatch(['Admin'])">
+            <a routerLink="/parametre" ><i class="fa fa-cog" aria-hidden="true"></i>
+            </a>
+            <span>
+                <a routerLink="/parametre"  href="#">Paramètres</a>
+            </span>
+        </li>
+      
+    </ul>
+</div>
+

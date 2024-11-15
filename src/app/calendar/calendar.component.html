@@ -1,0 +1,4 @@
+<div align="center" *ngIf="userService.roleMatch(['Admin'])">
+<button class="btn btn-secondary" (click)="listEvent()"> <i class="fa fa-calendar-check"></i> &nbsp;Modifier le calendrier </button></div>
+<br>
+<full-calendar [options]="calendarOptions"></full-calendar>

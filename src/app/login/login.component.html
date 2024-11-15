@@ -1,0 +1,45 @@
+<br>
+<br>
+<br>
+<div class="container col-md-8 col-lg-6 col-xl-6">
+    <div class="card" style="padding: 50px;">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+            <div class="input-group">
+                <i class="fa fa-user icon"></i>
+                <input type="email" formControlName="emailCapgemini" id="emailCapgemini" placeholder="Enter your username"
+                class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.emailCapgemini.errors }"/>
+                <div *ngIf="submitted && registerForm.controls.emailCapgemini.errors" class="invalid-feedback">
+                <div *ngIf="registerForm.controls.emailCapgemini.errors.required">Ce champs est obligatoire</div>
+                <div *ngIf="registerForm.controls.emailCapgemini.errors.email">Email must be a valid email address</div>
+                </div>
+            </div>
+            </div>
+
+
+           
+
+
+            <div class="form-group">
+            <div class="input-group">
+                <i class="fa fa-lock icon"></i>
+                <input type="password" id="userPassword" placeholder="Enter your password" formControlName="userPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.userPassword.errors }" />
+                <div *ngIf="submitted && registerForm.controls.userPassword.errors" class="invalid-feedback">
+                    <div *ngIf="registerForm.controls.userPassword.errors.required">Ce champs est obligatoire</div>
+            </div>
+            </div>
+            </div>
+           
+
+            <div class="col d-flex justify-content-center">
+                <input type="submit" value="Login" class="btn btn-primary"
+                    style="padding-left: 3.5rem; padding-right: 3.5rem;">
+            </div>
+            <br>
+            <div class="col d-flex justify-content-center">
+                <a href="#!" routerLink="/forget-password">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+</div>
+

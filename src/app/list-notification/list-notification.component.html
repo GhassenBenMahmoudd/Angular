@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card">
+        
+        <div class="card-body">
+
+            <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><b>Notifications</b></h2>
+
+<div class="list">
+    <div class="item" *ngFor="let notif of notifications">
+        {{notif.user.userFirstName}} {{notif.user.userLastName}} {{notif.message}} 
+        <span style="float: right;">{{notif.date | date}}
+        <button *ngIf="userService.roleMatch(['Admin'])" class="delete"
+                                (click)="annulerNotification(notif.idNotification)">
+                                <i class="fa fa-trash"></i>
+                                </button></span>
+    </div>   
+        </div>
+       </div>
+</div>

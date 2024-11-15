@@ -1,0 +1,263 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+<h2 align="center" style="color: dodgerblue;">Fiche d'évaluation à Froid</h2>
+<br>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+      
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" ngModel id="nom" name="nom" class="form-control mb-3">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="prenom">Prénom</label>
+            <input type="text" ngModel id="prenom" name="prenom" class="form-control mb-3">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="matricule">Matricule :</label>
+            <input type="text" ngModel id="matricule" name="matricule" class="form-control mb-3">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="activite">Activité :</label>
+            <input type="text" ngModel id="activite" name="activite" class="form-control mb-3">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="organisme">Organisme :</label>
+            <input type="text" ngModel id="organisme" name="organisme" class="form-control mb-3">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="lieu">Lieu :</label>
+            <input type="text" ngModel id="lieu" name="lieu" class="form-control mb-3">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="formation">Formation :</label>
+            <input type="text" ngModel id="formation" name="formation" class="form-control mb-3">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="duree">Durée de la formation :</label>
+            <input type="text" ngModel id="duree" name="duree" class="form-control mb-3">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="dateDebut">Date de début :</label>
+            <input type="date" ngModel id="dateDebut" name="dateDebut" class="form-control mb-3">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="dateFin">Date de fin :</label>
+            <input type="date" ngModel id="dateFin" name="dateFin" class="form-control mb-3">
+          </div>
+        </div>
+      </div>
+      <h3 align="center">AVIS SUR LA FORMATION REALISEE</h3>
+    <hr>
+          <div class="form-group">
+            <label>Avez-vous mis en application les connaissances acquises lors de votre formation ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="r1" value="Oui, parfaitement" ngModel>
+                <label class="form-check-label" for="parfaitement">
+                    Oui, parfaitement
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="r1" value="Oui, partiellement" ngModel>
+                <label class="form-check-label" for="partiellement">
+                    Oui, partiellement
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="r1" value="Non" ngModel>
+                <label class="form-check-label" for="non">
+                    Non
+                </label>
+              </div>
+        </div>
+          <div class="form-group">
+            <label for="txt1">Lesquelles :</label>
+            <input type="text" ngModel id="txt1" name="txt1" class="form-control mb-3">
+          </div>
+          <div class="form-group">
+            <label>Si "Oui, partiellement" ou "Non", pourquoi ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="c1" value="Manque de temps" ngModel>
+                <label class="form-check-label">
+                    Manque de temps
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="c11" value="Modules non acquis" ngModel>
+                <label class="form-check-label" >
+                    Modules non acquis
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="c12" value="Formation non adaptée" ngModel>
+                <label class="form-check-label" >
+                    Formation non adaptée
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="c13" value="Manque de moyens" ngModel>
+                <label class="form-check-label" >
+                    Manque de moyens
+                </label>
+              </div>
+              <div class="form-group">
+                <label for="txt2">Autres (précisez) :</label>
+                <input type="text" ngModel id="txt2" name="txt2" class="form-control mb-3">
+              </div>
+        </div>
+        <div class="form-group">
+            <label>Depuis la fin de la formation, as-tu pu mettre en pratique les connaissances acquises ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="r2" value="Oui" ngModel>
+                <label class="form-check-label">
+                    Oui
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="r2" value="Oui, partiellement" ngModel>
+                <label class="form-check-label">
+                    Oui, partiellement
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="r2" value="Non" ngModel>
+                <label class="form-check-label">
+                    Non
+                </label>
+              </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Si «Oui» ou «oui partiellement», à quelle fréquence ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="r3" value="Régulièrement" ngModel>
+                <label class="form-check-label">
+                    Régulièrement
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="r3" value="Occasionnellement" ngModel>
+                <label class="form-check-label">
+                    Occasionnellement
+                </label>
+              </div>
+        </div>
+        <div class="form-group">
+            <label>Si "Oui, partiellement" ou "Non", pourquoi ?</label>
+            <input type="text" ngModel id="txt3" name="txt3" class="form-control mb-3">
+        </div>
+        <div class="form-group">
+            <label>Selon vous, qu'est ce qui pourrait favoriser la mise en pratique de la formation ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="c2" value="Disposer de plus de temps de mise en pratique" ngModel>
+                <label class="form-check-label">
+                    Disposer de plus de temps de mise en pratique
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="c2" value="Etre guidé" ngModel>
+                <label class="form-check-label" >
+                    Etre guidé
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="c2" value="Autre" ngModel>
+                <label class="form-check-label" >
+                    Autre
+                </label>
+              </div>
+        </div>
+        <div class="form-group">
+            <label for="txt4">Quels compléments seraient nécessaires à la formation suivie ?</label>
+            <input type="text" ngModel id="txt4" name="txt4" class="form-control mb-3">
+          </div>
+          <div class="form-group">
+            <label for="txt5">Remarques/Observations</label>
+            <input type="text" ngModel id="txt5" name="txt5" class="form-control mb-3">
+          </div>
+          <h3 align="center">AVIS MANAGER</h3>
+          <hr>
+          <div class="form-group">
+            <label>La formation choisir semblait-elle répondre à votre activité ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="r4" value="Oui" ngModel>
+                <label class="form-check-label">
+                    Oui
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="r4" value="Oui, partiellement" ngModel>
+                <label class="form-check-label" >
+                    Oui, partiellement
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="r4" value="Non" ngModel>
+                <label class="form-check-label" >
+                    Non
+                </label>
+              </div>
+              
+              <div class="form-group">
+                <label for="txt6">Pourquoi ?</label>
+                <input type="text" ngModel id="txt6" name="txt6" class="form-control mb-3">
+              </div>
+        </div>
+        <div class="form-group">
+            <label>Au regard de l'objectif visé, le résultat est-il atteint ?</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="r5" value="En totalité" ngModel>
+                <label class="form-check-label">
+                    En totalité
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="r5" value="Partiellement" ngModel>
+                <label class="form-check-label" >
+                    Partiellement
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="r5" value="Non" ngModel>
+                <label class="form-check-label" >
+                    Non
+                </label>
+              </div>
+              
+        </div>
+      <div class="text-right">
+        <button class="btn btn-success" type="submit">Enregistrer</button>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+  

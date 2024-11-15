@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            Modifier une formation
+        </div>   
+        <div class="card-body">
+        <form (ngSubmit) = "updateSession()">
+            <div class="form-group">
+                <label> nom </label>
+                <input type="text" class="form-control" id="nomSession" [(ngModel)]="session.nomSession" name="nomSession">
+            </div>
+            <div class="form-group">
+                <label> nom formateur </label>
+                <input type="text" class="form-control" id="nomFormateur" [(ngModel)]="session.nomFormateur" name="nomFormateur">
+            </div>
+            <div class="form-group">
+                <label> Date debut </label>
+                <input type="date" class="form-control" id="dateDebut" [(ngModel)]="session.dateDebut" name="dateDebut">
+            </div>
+            <div class="form-group">
+                <label> date fin </label>
+                <input type="date" class="form-control" id="dateFin" [(ngModel)]="session.dateFin" name="dateFin">
+            </div>
+            <div class="form-group">
+                <label > Les employés </label>
+                <select class="form-select"  multiple [(ngModel)] ="selectedEmployees" name="selectedEmployees">
+                <option *ngFor="let employee of employees" [ngValue]="employee">{{employee.userFirstName}} {{employee.userLastName}}</option>
+                </select>
+            </div>
+
+            <div class="text-right">
+                <button class="btn btn-success" type="submit">Modifier</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+    

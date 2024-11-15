@@ -1,0 +1,304 @@
+<div class="container">
+  <div class="card">
+      <div class="card-body">
+<h2 align="center" style="color: dodgerblue;">Fiche d'évaluation à chaud</h2>
+<br>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <h3 align="center">FORMATION</h3>
+  <hr>
+    <div class="form-group">
+      <label for="theme">Thème</label>
+      <input type="text" ngModel id="theme" name="theme" class="form-control mb-3">
+    </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="organisme">Organisme</label>
+          <input type="text" ngModel id="organisme" name="organisme" class="form-control mb-3">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="formateur">Formateur</label>
+          <input type="text" ngModel id="formateur" name="formateur" class="form-control mb-3">
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="date">Date(s) :</label>
+          <input type="date" ngModel id="date" name="date" class="form-control mb-3">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="lieu">Lieu</label>
+          <input type="text" ngModel id="lieu" name="lieu" class="form-control mb-3">
+        </div>
+      </div>
+    </div>
+    <h3 align="center">PARTICIPANT</h3>
+  <hr>
+  <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="nom">Nom :</label>
+          <input type="text" ngModel id="nom" name="nom" class="form-control mb-3">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="prenom">Prénom :</label>
+          <input type="text" ngModel id="prenom" name="prenom" class="form-control mb-3">
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="matricule">Matricule ATC :</label>
+          <input type="text" ngModel id="matricule" name="matricule" class="form-control mb-3">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="fonction">Fonction :</label>
+          <input type="text" ngModel id="fonction" name="fonction" class="form-control mb-3">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="direction">Direction/Activité/Service :</label>
+      <input type="text" ngModel id="direction" name="direction" class="form-control mb-3">
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Niveau de satisfaction</th>
+          <th>Très Bien</th>
+          <th>Bien</th>
+          <th>Moyen</th>
+          <th>Insuffisant</th>
+          <th>Très insuffisant</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Le rythme de la formation</td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rythme" value="Très Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rythme" value="Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rythme" value="Moyen" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rythme" value="Insuffisant" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="rythme" value="Très Insuffisant" ngModel>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Les horaires par rapport au contenu de la formation</td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="horaires" value="Très Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="horaires" value="Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="horaires" value="Moyen" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="horaires" value="Insuffisant" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="horaires" value="Très Insuffisant" ngModel>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>L'organisation matérielle(Convocation, lieu, pauses...)</td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="org" value="Très Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="org" value="Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="org" value="Moyen" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="org" value="Insuffisant" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="org" value="Très Insuffisant" ngModel>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Le respect du programme de formation</td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="respect" value="Très Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="respect" value="Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="respect" value="Moyen" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="respect" value="Insuffisant" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="respect" value="Très Insuffisant" ngModel>
+                </div>
+              </td>
+            </tr>    
+            <tr>
+              <td>La prestation du formateur</td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="prestation" value="Très Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="prestation" value="Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="prestation" value="Moyen" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="prestation" value="Insuffisant" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="prestation" value="Très Insuffisant" ngModel>
+                </div>
+              </td>
+            </tr>        
+            <tr>
+              <td>La qualité des supports utilisés</td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="support" value="Très Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="support" value="Bien" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="support" value="Moyen" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="support" value="Insuffisant" ngModel>
+                </div>
+              </td>
+              <td>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="support" value="Très Insuffisant" ngModel>
+                </div>
+              </td>
+            </tr>  
+       <tr>
+          <td>Les méthodes pédagogiques, d'animation</td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="methode" value="Très Bien" ngModel>
+            </div>
+          </td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="methode" value="Bien" ngModel>
+            </div>
+          </td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="methode" value="Moyen" ngModel>
+            </div>
+          </td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="methode" value="Insuffisant" ngModel>
+            </div>
+          </td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="methode" value="Très Insuffisant" ngModel>
+            </div>
+          </td>
+        </tr> 
+        
+      </tbody>
+    </table>
+    <div class="form-group">
+      <label for="niveau">Quel est le niveau d'atteinte des objectifs de la formation par rapport à vos attentes en (%) ?</label>
+      <input type="text" ngModel id="niveau" name="niveau" class="form-control mb-3">
+    </div>
+    <div class="form-group">
+      <label for="preciser">Préciser si < 70% :</label>
+      <textarea type="text" ngModel id="preciser" name="preciser" class="form-control mb-3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="comm">Commentaires/Observations/Suggestions :</label>
+      <input type="text" ngModel id="comm" name="comm" class="form-control mb-3">
+    </div>
+    <div class="text-right">
+      <button class="btn btn-success" type="submit">Enregistrer</button>
+  </div>
+</form>
+</div>
+  </div></div>
+

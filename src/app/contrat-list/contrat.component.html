@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Liste des contrats</b>
+            <button *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Operator'])"
+                routerLink="/ajouter-contrat" class="btn btn-light" style="margin-left:800px"><i
+                    class="fa fa-plus icon"></i> Contrat</button>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <div class="col-lg-3">
+                    <input type="text" class="form-control" placeholder="Search"
+                        style="margin-left:800px;border-radius: 20px;" [(ngModel)]="searchTerm" />
+                </div>
+            </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Employé</th>
+                <th>Type de contrat</th>
+                <th>Date début</th>
+                <th>Date fin</th>
+                <th>Salaire</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contrat of contrats| filter:searchTerm | paginate: { itemsPerPage: 10, currentPage: pages}">
+                <td>{{contrat.user.userFirstName}} {{contrat.user.userLastName}}</td>
+                <td>{{contrat.typeContrat.nomTypeContrat}}</td>
+                <td>{{contrat.startDate}}</td>
+                <td>{{contrat.endDate}}</td>
+                <td>{{contrat.salaire}}</td>
+                <td class="actions">
+                    <button *ngIf="userService.roleMatch(['Admin'])" class="delete"
+                        (click)="annulerContrat(contrat.idContrat)">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <pagination-controls (pageChange)="pages = $event" style="text-align: center;"></pagination-controls>
+</div>

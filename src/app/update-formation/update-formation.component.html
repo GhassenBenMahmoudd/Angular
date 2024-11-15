@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            Modifier une formation
+        </div>   
+        <div class="card-body">
+    <form (ngSubmit) = "updateFormation()">
+    
+    <div class="form-row">
+   
+        <div class="col-md-6 mb-3">
+      <div class="form-group">
+        <label> Libellé </label>
+        <input type="String" class="form-control" id="Nom" [(ngModel)]="formation.libelle" name="Nom">
+  </div>
+<div class="form-group">
+    <label> sujet </label>
+    <input type="String" class="form-control" id="sujet" [(ngModel)]="formation.sujet" name="sujet">
+</div>
+
+<div class="text-center">
+    <button class="btn btn-success" type="submit">Modifier</button>
+    </div></div>
+</div></form></div></div></div>
+
+
+    

@@ -1,0 +1,211 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            Modifier un employé
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="updateEmployee()">
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Id Payroll </label>
+                            <input type="number" class="form-control" id="idPayroll" [(ngModel)]="employee.idPayroll"
+                                name="idPayroll">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>CIN</label>
+                            <input type="text" class="form-control" id="cin"
+                            [(ngModel)]="employee.cin" name="cin"  >
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Date de naissance </label>
+                            <input type="date" class="form-control" id="dateNaissance"
+                                [(ngModel)]="employee.dateNaissance" name="dateNaissance">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Nom </label>
+                            <input type="text" class="form-control" id="userFirstName"
+                                [(ngModel)]="employee.userFirstName" name="userFirstName">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Prénom </label>
+                            <input type="text" class="form-control" id="userLastName"
+                                [(ngModel)]="employee.userLastName" name="userLastName">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Profil</label>
+                            <select id="profil" class="form-control" [(ngModel)]="employee.profil" name="profil">
+                                <option selected>Ingenieur</option>
+                                <option>Technicien</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="selectedDept">Department</label>
+                            <select class="form-control" id="selectedDept" name="selectedDept" [(ngModel)]="selectedDept" required>
+                              <option *ngFor="let dept of departements" [value]="dept.nomDept">{{ dept.nomDept }}</option>
+                            </select>
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Expérience antérieur </label>
+                            <input type="number" class="form-control" id="expAnt" [(ngModel)]="employee.expAnt"
+                                name="expAnt">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Anciennete ATC </label>
+                            <input type="number" class="form-control" id="ancienneteATC"
+                                [(ngModel)]="employee.ancienneteATC" name="ancienneteATC">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Genre</label>
+                            <select id="genre" class="form-control" [(ngModel)]="employee.genre" name="genre">
+                                <option selected>Homme</option>
+                                <option>Femme</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Situation familiale </label>
+                            <input type="text" class="form-control" id="situationFamiliale"
+                                [(ngModel)]="employee.situationFamiliale" name="situationFamiliale">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Nombre d'enfant </label>
+                            <input type="number" class="form-control" id="nbEnfant" [(ngModel)]="employee.nbEnfant"
+                                name="nbEnfant">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Diplome </label>
+                            <input type="text" class="form-control" id="diplome" [(ngModel)]="employee.diplome"
+                                name="diplome">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Ecole </label>
+                            <input type="text" class="form-control" id="ecole" [(ngModel)]="employee.ecole"
+                                name="ecole">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Promortion </label>
+                            <input type="date" class="form-control" id="promotion" [(ngModel)]="employee.promotion"
+                                name="promotion">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label> E-mail personnel </label>
+                            <input type="text" class="form-control" id="emailPerso" [(ngModel)]="employee.emailPerso"
+                                name="emailPerso">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label> E-mail Capgemini </label>
+                            <input type="text" class="form-control" id="emailCapgemini"
+                                [(ngModel)]="employee.emailCapgemini" name="emailCapgemini">
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Telephone personnel </label>
+                            <input type="number" class="form-control" id="telPerso" [(ngModel)]="employee.telPerso"
+                                name="telPerso">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Telephone professionel </label>
+                            <input type="number" class="form-control" id="telPro" [(ngModel)]="employee.telPro"
+                                name="telPro">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Date expiration du passport </label>
+                            <input type="date" class="form-control" id="passportExpired"
+                                [(ngModel)]="employee.passportExpired" name="passportExpired">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    
+                   
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Date expiration du visa </label>
+                            <input type="date" class="form-control" id="visaExpired" [(ngModel)]="employee.visaExpired"
+                                name="visaExpired">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Professional community</label>
+                            <select id="professionalCommunity" class="form-control"
+                                [(ngModel)]="employee.professionalCommunity" name="professionalCommunity">
+                                <option selected></option>
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Job Name </label>
+                            <input type="text" class="form-control" id="jobName" [(ngModel)]="employee.jobName"
+                                name="jobName">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label> Role Family </label>
+                            <input type="text" class="form-control" id="roleFamily" [(ngModel)]="employee.roleFamily"
+                                name="roleFamily">
+                        </div>
+                    </div>
+                </div>
+                        <div class="text-right">
+                            <button class="btn btn-success" type="submit">Modifier</button>
+                        </div>
+            </form>
+        </div>
+    </div>
+</div>

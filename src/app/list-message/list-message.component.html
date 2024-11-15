@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card">
+        
+        <div class="card-body">
+
+            <h2 style="text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><b>Liste des notifications</b></h2>
+
+<div class="list">
+    <div class="item" *ngFor="let notif of messages">
+        {{notif.msg}} 
+        <span style="float: right;">{{notif.date | date}}
+        <button class="delete"
+                                (click)="annulerMessage(notif.idMessage)">
+                                <i class="fa fa-trash"></i>
+                                </button></span>
+    </div>   
+        </div>
+       </div>
+</div>

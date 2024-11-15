@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b> Liste des événements</b>
+            <button *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])"
+                routerLink="/add-event" class="btn btn-light" style="margin-left:780px"><i
+                    class="fa fa-plus icon"></i> Evénement</button>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                
+            </div>
+            <div class="row mt-4" >
+                      
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Date début</th>
+                        <th>Date Fin</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let event of events | paginate: { itemsPerPage: 5, currentPage: pages}">
+                        <td>{{event.title}}</td>
+                        <td>{{event.start | date:'short'}}</td>
+                        <td>{{event.end | date:'short'}}</td>
+                        <td class="actions">
+                            <button *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])"
+                                class="update" (click)="updateEvent(event.idEvent)">
+                                <i class="fa fa-pen"></i>
+                            </button>
+                            
+                            <button *ngIf="userService.roleMatch(['Admin'])" class="delete"
+                                (click)="annulerEvent(event.idEvent)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <pagination-controls (pageChange)="pages = $event" style="text-align: center;"></pagination-controls>
+        </div>
+    </div>
+</div>

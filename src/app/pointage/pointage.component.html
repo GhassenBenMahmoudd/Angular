@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Liste des pointages</b>
+            <button class="btn btn-light" style="margin-left:800px"
+            routerLink="/add-pointage"><i class="fa fa-plus icon"></i> pointage</button>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <div class="col-lg-3">
+                    <input type="text" class="form-control" placeholder="Search"
+                        style="margin-left:800px;border-radius: 20px;" [(ngModel)]="searchTerm" />
+                </div>
+            </div>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Heure d'entrée</th>
+                        <th scope="col">Heure de sortie</th>
+                        <th scope="col">Temps travail</th>
+                        <th scope="col">Delete</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let pointage of pointages | pointageFilter:searchTerm | paginate: { itemsPerPage: 10, currentPage: pages}">
+                        <td>{{ pointage.user.userFirstName}} {{pointage.user.userLastName}}</td>
+                        <td>{{ pointage.heureEntree | date:'short' }}</td>
+                        <td>{{ pointage.heureSortie | date:'short' }}</td>
+                        <td>{{ pointage.duree | number:'1.2-2'}} heures</td>
+
+
+                        <td><button type="button" class="btn btn-outline-danger"
+                                (click)="deletePointage(pointage.idPointage)"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <br>
+    <pagination-controls (pageChange)="pages = $event" style="text-align: center;"></pagination-controls>
+    </div>
+    
+</div>
+
+
+
+    

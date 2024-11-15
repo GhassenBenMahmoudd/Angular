@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Liste des départements</b>
+            <button *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])"
+                routerLink="/add-departement" class="btn btn-light" style="margin-left:740px"><i
+                    class="fa fa-plus icon"></i> Departement</button>
+        </div>
+        <div class="card-body">
+           
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Effacer</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        *ngFor="let departement of departements | paginate: { itemsPerPage: 10, currentPage: pages}">
+                        <td>{{departement.nomDept}}</td>
+                        <td class="actions">
+                           
+                            <button *ngIf="userService.roleMatch(['Admin'])" class="delete"
+                                (click)="annulerDepartement(departement.nomDept)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <pagination-controls (pageChange)="pages = $event" style="text-align: center;"></pagination-controls>
+    </div>
+</div>

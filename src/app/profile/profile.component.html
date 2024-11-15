@@ -1,0 +1,149 @@
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Profile</b>
+            <button *ngIf="userService.roleMatch(['Admin'])" (click)="updateEmployee(employee.idCapgemini)"
+                routerLink="/update-employee" class="btn btn-light" style="margin-left:910px"><i class="fa fa-pen"
+                    aria-hidden="true"></i> Modifier</button>
+        </div>
+        <div class="card-body">
+
+            <h1>{{employee.userFirstName}} {{employee.userLastName}}</h1>
+            <br>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>ID Capgemini</label>
+                        <input type="text" class="form-control" id="idCapgemini" [(ngModel)]="employee.idCapgemini"
+                            name="idCapgemini" disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>ID Payroll</label>
+                        <input type="text" class="form-control" id="idPayroll" [(ngModel)]="employee.idPayroll"
+                            name="idPayroll" disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>CIN</label>
+                        <input type="text" class="form-control" id="cin" [(ngModel)]="employee.cin" name="cin"
+                            disabled="true">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Diplome</label>
+                        <input type="text" class="form-control" id="diplome" [(ngModel)]="employee.diplome" name="diplome"
+                            disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Ecole</label>
+                        <input type="text" class="form-control" id="ecole" [(ngModel)]="employee.ecole" name="ecole"
+                            disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Promotion</label>
+                        <input type="text" class="form-control" id="promotion" [(ngModel)]="employee.promotion" name="promotion"
+                            disabled="true">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>E-mail Capgemini</label>
+                        <input type="text" class="form-control" id="emailCapgemini" [(ngModel)]="employee.emailCapgemini"
+                            name="emailCapgemini" disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>E-mail Personnel</label>
+                        <input type="text" class="form-control" id="emailPerso" [(ngModel)]="employee.emailPerso"
+                            name="emailPerso" disabled="true">
+                    </div>
+                </div>  
+            </div>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Téléphone Personnel</label>
+                        <input type="text" class="form-control" id="telPerso" [(ngModel)]="employee.telPerso"
+                            name="telPerso" disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Téléphone Professionnelle</label>
+                        <input type="text" class="form-control" id="telPro" [(ngModel)]="employee.telPro"
+                            name="telPro" disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Profil</label>
+                        <input type="text" class="form-control" id="profil" [(ngModel)]="employee.profil" name="profil"
+                            disabled="true">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Genre</label>
+                        <input type="text" class="form-control" id="genre" [(ngModel)]="employee.genre" name="genre"
+                            disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Situation familiale</label>
+                        <input type="text" class="form-control" id="situationFamiliale"
+                            [(ngModel)]="employee.situationFamiliale" name="situationFamiliale" disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Date de naissance</label>
+                        <input type="text" class="form-control" id="dateNaiss" [(ngModel)]="employee.dateNaissance"
+                            name="dateNaiss" disabled="true">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+               
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Exp Ant</label>
+                        <input type="text" class="form-control" id="expAnt" [(ngModel)]="employee.expAnt"
+                            name="expAnt" disabled="true">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Anciennete ATC</label>
+                        <input type="text" class="form-control" id="ancienneteATC" [(ngModel)]="employee.ancienneteATC"
+                            name="ancienneteATC" disabled="true">
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Professional Community</label>
+                        <input type="text" class="form-control" id="professionalCommunity" [(ngModel)]="employee.professionalCommunity"
+                            name="professionalCommunity" disabled="true">
+                    </div>
+                </div>
+                
+            </div>  
+        </div>
+    </div>

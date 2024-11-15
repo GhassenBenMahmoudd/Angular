@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="card">
+    <div class="card-header text-white bg-info">
+      Ajouter une formation
+    </div>
+    <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            
+            <div class="form-group">
+              <label for="libelle">Libellé</label><span style="color: red;"> *</span>
+              <input type="text" formControlName="libelle" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.libelle.errors }" />
+              <div *ngIf="submitted && registerForm.controls.libelle.errors" class="invalid-feedback">
+                <div *ngIf="registerForm.controls.libelle.errors.required">Ce champs est obligatoire</div>
+              </div>
+            </div>
+
+
+            
+          
+            <div class="form-group">
+              <label for="sujet">sujet</label><span style="color: red;"> *</span>
+              <textarea type="text" formControlName="sujet" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.sujet.errors }"></textarea>
+              <div *ngIf="submitted && registerForm.controls.sujet.errors" class="invalid-feedback">
+                <div *ngIf="registerForm.controls.sujet.errors.required">Ce champs est obligatoire</div>
+              </div>
+            </div>
+            <div class="text-right">
+              <button class="btn btn-success" type="submit">Ajouter</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

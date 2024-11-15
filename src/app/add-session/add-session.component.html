@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="card">
+      <div class="card-header text-white bg-info">
+          Ajouter une session
+      </div>   
+      <div class="card-body">
+        <form (ngSubmit) = "saveSession()">
+    <div class="form-group">
+      <label>Nom Session</label>
+      <input type="text" class="form-control" [(ngModel)]="session.nomSession" name="nomSession">
+    </div>
+    <div class="form-group">
+      <label>Nom Formateur</label>
+      <input type="text" class="form-control" [(ngModel)]="session.nomFormateur" name="nomFormateur">
+    </div>
+  <div class="form-group">
+    <label> date debut </label>
+    <input type="date" class="form-control" id="Nom" [(ngModel)]="session.dateDebut" name="Nom">
+</div>
+<div class="form-group">
+      <label>Date de fin</label>
+      <input type="date" class="form-control" [(ngModel)]="session.dateFin" name="dateFin">
+    </div>
+    <div class="form-group">
+      <label > les employés </label>
+       <select class="form-select"  multiple [(ngModel)] ="selectedEmployees" name="selectedEmployees">
+        <option *ngFor="let employee of employees" [ngValue]="employee" >{{employee.userFirstName}} {{employee.userLastName}}</option>
+       </select>
+      
+      </div>
+<div class="text-right">
+  <button class="btn btn-success" type="submit">Ajouter</button>
+  </div>
+</form>
+</div>
+</div>
+</div>

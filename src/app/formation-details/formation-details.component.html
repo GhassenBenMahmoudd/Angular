@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Formation details</b>
+            <button *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])"
+                (click)="addSession(formation.idFormation)" class="btn btn-light" style="margin-left:830px"><i
+                    class="fa fa-plus icon"></i> Session</button>
+        </div>
+        <div class="card-body">
+           
+                <div class="form-group">
+                    <label> <b>Libellé :</b></label> {{formation.libelle}}
+                </div>
+                <div class="form-group">
+                    <label> <b>sujet :</b></label> {{formation.sujet}}
+                </div>
+                <div align="center">
+                    <b>Liste des sessions</b>
+                </div>
+                <br>
+
+                <div>
+                 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Nom formateur</th>
+                                <th scope="col">Date Début</th>
+                                <th scope="col">Date fin</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let session of sessions">
+                                <td>{{session.nomSession}}</td>
+                                <td>{{session.nomFormateur}}</td>
+                                <td>{{session.dateDebut | date}}</td>
+                                <td>{{session.dateFin | date}}</td>
+
+                                <td class="actions">
+                                    <button class="update"
+                                        *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])"
+                                        (click)="updateSession(session.idSession)">
+                                        <i class="fa fa-pen"></i>
+                                    </button>
+                                    <button class="details" (click)="sessionDetails(session.idSession)">
+                                        <i class="fa fa-eye"></i>
+                                    </button>
+                                    <button class="delete" *ngIf="userService.roleMatch(['Admin'])"
+                                        (click)="supprimerSession(formation.idFormation,session.idSession)">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+           
+
+        </div>
+    </div>

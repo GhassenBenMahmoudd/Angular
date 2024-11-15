@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Liste des employés</b>
+            <button *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])"
+                routerLink="/registerNewUser" class="btn btn-light" style="margin-left:810px"><i
+                    class="fa fa-user-plus"></i> Employé</button>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <div class="col-lg-3">
+                    <input type="text" class="form-control" placeholder="Search"
+                        style="margin-left:800px;border-radius: 20px;" [(ngModel)]="searchTerm" />
+                </div>
+            </div>
+            <div class="container">
+                <div class="container-fluid g-0 p-2">
+
+                    <div class="row mt-4"
+                        *ngFor="let employee of employees | itemFilter:searchTerm | paginate: { itemsPerPage: 10, currentPage: pages}">
+                        <div class="c1" *ngIf="employee.archive==false">
+
+                            <div class="col ps-2">
+
+                                <div class="row g-0">
+
+                                    <div class="col-md-15 text-center">
+                                        <span class="name">{{employee.userFirstName}} {{employee.userLastName}}</span>
+                                        <div *ngIf="userService.roleMatch(['Admin'])" class="col-md-12 text-right">
+                                            <div class="btn-group" role="group">
+                                                <button type="button" class="btn btn-outline-primary"
+                                                    (click)="updateEmployee(employee.idCapgemini)"><i
+                                                        class="fa fa-pen"></i></button>
+                                                <button type="button" class="btn btn-outline-success"
+                                                    (click)="employeeDetails(employee.idCapgemini)"><i
+                                                        class="fa fa-eye"></i></button>
+                                                <button type="button" class="btn btn-outline-danger"
+                                                    (click)="archiveEmployee(employee.idCapgemini)"><i
+                                                        class="fa fa-trash"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row g-0 mt-3">
+
+                                    <div class="col-md">
+
+                                        <table class="table table-hover mx-auto">
+                                            <thead class="text-center fs-5 fst-italic text-secondary">
+                                                <tr>
+                                                    <td colspan="2">Personal Details</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Date de naissance</td>
+                                                    <td>{{employee.dateNaissance | date }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Genre</td>
+                                                    <td>{{employee.genre}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Contact</td>
+                                                    <td>{{employee.telPro}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                    <div class="col">
+
+                                        <table class="table table-hover mx-auto">
+                                            <thead class="text-center fs-5 fst-italic text-secondary">
+                                                <tr>
+                                                    <td colspan="2">Job Details</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>id Capgemini</td>
+                                                    <td>{{employee.idCapgemini}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>id Payrol</td>
+                                                    <td>{{employee.idPayroll}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Role</td>
+                                                    <td>{{employee.role[0].roleName}} </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <pagination-controls (pageChange)="pages = $event" style="text-align: center;"></pagination-controls>
+
+            </div>
+        </div>
+    </div>

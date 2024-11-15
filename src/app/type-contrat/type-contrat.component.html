@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Liste type des contrats</b>
+            <button *ngIf="userService.roleMatch(['Admin']) || userService.roleMatch(['Opérateur RH'])"
+                routerLink="/add-type-contrat" class="btn btn-light" style="margin-left:740px"><i
+                    class="fa fa-plus icon"></i> type contrat</button>
+        </div>
+        <div class="card-body">
+           
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Effacer</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        *ngFor="let type of types | paginate: { itemsPerPage: 10, currentPage: pages}">
+                        <td>{{type.nomTypeContrat}}</td>
+                        <td class="actions">
+                           
+                            <button *ngIf="userService.roleMatch(['Admin'])" class="delete"
+                                (click)="annulerType(type.nomTypeContrat)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <pagination-controls (pageChange)="pages = $event" style="text-align: center;"></pagination-controls>
+    </div>
+</div>

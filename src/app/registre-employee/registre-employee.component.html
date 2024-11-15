@@ -1,0 +1,371 @@
+<div class="container">
+  <div class="card">
+      <div class="card-header text-white bg-info">
+          Registre un employé
+      </div>
+      <div class="card-body">
+              <form [formGroup]="registerForm" (ngSubmit)="registreEmployee()">
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="idCapgemini">Id Capgemini</label><span style="color: red;"> *</span>
+                      <input type="number" formControlName="idCapgemini" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.idCapgemini.errors }" />
+                      <div *ngIf="submitted && registerForm.controls.idCapgemini.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.idCapgemini.errors.required">Ce champs est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="idPayroll">Id Payroll</label><span style="color: red;"> *</span>
+                      <input type="number" formControlName="idPayroll" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.idPayroll.errors }" />
+                      <div *ngIf="submitted && registerForm.controls.idPayroll.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.idPayroll.errors.required">Ce champs est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="cin">Numéro CIN</label><span style="color: red;"> *</span>
+                      <input type="text" formControlName="cin" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.cin.errors }" />
+                      <div *ngIf="submitted && registerForm.controls.cin.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.cin.errors.required">Ce champs est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="userFirstName">Nom</label><span style="color: red;"> *</span>
+                      <input type="text" formControlName="userFirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.userFirstName.errors }" />
+                      <div *ngIf="submitted && registerForm.controls.userFirstName.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.userFirstName.errors.required">Ce champs est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="userLastName">Prénom</label><span style="color: red;"> *</span>
+                      <input type="text" formControlName="userLastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.userLastName.errors }" />
+                      <div *ngIf="submitted && registerForm.controls.userLastName.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.userLastName.errors.required">Ce champs est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="dateNaissance">Date de naissance</label><span style="color: red;"> *</span>
+                      <input type="date" formControlName="dateNaissance" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.dateNaissance.errors }" />
+                      <div *ngIf="submitted && registerForm.controls.dateNaissance.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.dateNaissance.errors.required">Ce champs est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="emailCapgemini">E-mail Capgemini</label><span style="color: red;"> *</span>
+                      <input type="email" formControlName="emailCapgemini" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.emailCapgemini.errors }" />
+                      <div *ngIf="submitted && registerForm.controls.emailCapgemini.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.emailCapgemini.errors.required"> Ce champs est obligatoire </div>
+                        <div *ngIf="registerForm.controls.emailCapgemini.errors.email">L'e-mail doit être une adresse e-mail valide</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="emailPerso">E-mail personnel</label><span style="color: red;"> *</span>
+                      <input type="email" formControlName="emailPerso" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.emailPerso.errors }" />
+                      <div *ngIf="submitted && registerForm.controls.emailPerso.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.emailPerso.errors.required">Ce champs est obligatoire</div>
+                        <div *ngIf="registerForm.controls.emailPerso.errors.email">L'e-mail doit être une adresse e-mail valide</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="telPerso">Telephone personnel</label>
+                      <input type="number" formControlName="telPerso" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.telPerso.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.telPerso.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.telPerso.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="telPro">Telephone professionel</label><span style="color: red;"> *</span>
+                      <input type="number" formControlName="telPro" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.telPro.errors }" />
+                      <div *ngIf="submitted && registerForm.controls.telPro.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.telPro.errors.required">Ce champs est obligatoire</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label> Profil </label>
+                      <select id="profil" class="form-control" formControlName="profil" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.profil.errors }">
+                          <option selected>Ingenieur</option>
+                          <option>Technicien</option>
+                  </select>
+                  </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label> Genre </label><span style="color: red;"> *</span>
+                      <select id="genre" class="form-control" formControlName="genre" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.genre.errors }">
+                          <option selected>Homme</option>
+                          <option>Femme</option>
+                  </select>
+                  </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="situationFamiliale">Situation familiale</label><span style="color: red;"> *</span>
+                      <select id="situationFamiliale" class="form-control" formControlName="situationFamiliale" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.situationFamiliale.errors }">
+                          <option selected>Célibataire</option>
+                          <option>Marié</option>
+                          <option>Divorcé</option>
+                          <option>Veuf/veuve</option>
+                  </select>
+                  </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="nbEnfant">Nombre d'enfant</label>
+                      <input type="number" formControlName="nbEnfant" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.nbEnfant.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.nbEnfant.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.nbEnfant.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="diplome">Diplome</label>
+                      <input type="text" formControlName="diplome" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.diplome.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.diplome.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.diplome.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="ecole">Ecole</label>
+                      <input type="text" formControlName="ecole" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.ecole.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.ecole.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.ecole.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="promotion">Promortion</label>
+                      <input type="date" formControlName="promotion" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.promotion.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.promotion.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.promotion.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="expAnt">Expérience antérieur</label>
+                      <input type="number" formControlName="expAnt" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.expAnt.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.expAnt.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.expAnt.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="ancienneteATC">Anciennete ATC</label>
+                      <input type="number" formControlName="ancienneteATC" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.ancienneteATC.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.ancienneteATC.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.ancienneteATC.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label> Activité / Département </label><span style="color: red;"> *</span>
+                      <select class="form-control" formControlName="departement" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.departement.errors }">
+                        <option *ngFor="let departement of departements" [value]="departement.nomDept">{{ departement.nomDept }}</option>
+                      </select>
+                      <div *ngIf="submitted && registerForm.controls.departement.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.departement.errors.required">Ce champs est obligatoire</div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="passportExpired">Date expiration du passport</label>
+                      <input type="date" formControlName="passportExpired" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.passportExpired.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.passportExpired.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.passportExpired.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="visaExpired">Date expiration du visa</label>
+                      <input type="date" formControlName="visaExpired" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.visaExpired.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.visaExpired.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.visaExpired.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group" >
+                      <label>Manager</label>
+                      <!--<input type="text" class="form-control" formControlName="idCapgemini" >-->
+                      <select class="form-control" formControlName="manager" class="form-control">
+                        <option *ngFor="let manager of managers" [value]="manager.idCapgemini">{{ manager.userFirstName }} {{ manager.userLastName }}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+           
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="roleFamily">Role Family</label>
+                      <input type="text" formControlName="roleFamily" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.roleFamily.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.roleFamily.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.roleFamily.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="jobName">Job Name</label>
+                      <input type="text" formControlName="jobName" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.jobName.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.jobName.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.jobName.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="titreAdmin">Titre admin</label>
+                      <input type="text" formControlName="titreAdmin" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.titreAdmin.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.titreAdmin.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.titreAdmin.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div> 
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="classement">classement</label>
+                      <select id="classement"  class="form-control" formControlName="classement" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.classement.errors }" (change)="affecter()">
+                        <option value="fff"selected>fff</option>
+                        <option value="aa">aaa</option>
+                      </select>
+                  </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="skills">skills</label>
+                      <input type="text" formControlName="skills" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.skills.errors }" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="l1"> l1</label>
+                      <input type="text"  formControlName="l1" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.l1.errors }" />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="l2">L2</label>
+                      <input type="text" formControlName="l2" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.l2.errors }" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="ncr">NCR</label>
+                      <input type="text"  formControlName="ncr" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.ncr.errors }" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="professionalCommunity">Professional community</label>
+                      <input type="text" formControlName="professionalCommunity" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.professionalCommunity.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.professionalCommunity.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.professionalCommunity.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                             <label>Rôle</label><span style="color: red;"> *</span>
+                                 <select class="form-select" formControlName="role" multiple>
+                                   <option *ngFor="let role of roles" [value]="role">{{ role.roleName }}</option>
+                                 </select>
+                           </div>
+                     </div>
+                  
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label >type contrat</label>
+                      <!--<input type="text" formControlName="typeContrat" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.typeContrat.errors }" />-->
+                      <select class="form-control" formControlName="typeContrat" class="form-control">
+                        <option *ngFor="let typeContrat of typeContrats" [value]="typeContrat.nomTypeContrat">{{ typeContrat.nomTypeContrat }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label >endDate</label>
+                      <input type="date"  formControlName="endDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.endDate.errors }" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label >startDate </label>
+                      <input type="date" formControlName="startDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.startDate.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.professionalCommunity.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.professionalCommunity.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label >salaire </label>
+                      <input type="number" formControlName="salaire" class="form-control" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.salaire.errors }" />
+                      <!--<div *ngIf="submitted && registerForm.controls.professionalCommunity.errors" class="invalid-feedback">
+                        <div *ngIf="registerForm.controls.professionalCommunity.errors.required">Ce champs est obligatoire</div>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                      
+                      <div class="text-right">
+                          <button class="btn btn-success" type="submit">Ajouter</button>
+                      </div>
+          </form>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            <b>Liste des employés</b>
+            
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <div class="col-lg-3">
+                    <input type="text" class="form-control" placeholder="Search"
+                        style="margin-left:800px;border-radius: 20px;" [(ngModel)]="searchTerm" />
+                </div>
+            </div>
+            <div class="container">
+                <div class="container-fluid g-0 p-2">
+
+                    <div class="row mt-4"
+                        *ngFor="let employee of employees | itemFilter:searchTerm | paginate: { itemsPerPage: 10, currentPage: pages}">
+                        <div class="c1" *ngIf="employee.archive==false">
+                          
+
+                            <div class="col ps-2">
+
+                                <div class="row g-0">
+
+                                    <div class="col-md-15 text-center">
+                                        <span class="name">{{employee.userFirstName}} {{employee.userLastName}}</span>
+                                       
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="row g-0 mt-3">
+
+                                    <div class="col-md">
+
+                                        <table class="table table-hover mx-auto">
+                                            <thead class="text-center fs-5 fst-italic text-secondary">
+                                                <tr>
+                                                    <td colspan="2">Personal Details</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Date de naissance</td>
+                                                    <td>{{employee.dateNaissance | date }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Gender</td>
+                                                    <td>{{employee.genre}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Education</td>
+                                                    <td>{{employee.diplome}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                    <div class="col">
+
+                                        <table class="table table-hover mx-auto">
+                                            <thead class="text-center fs-5 fst-italic text-secondary">
+                                                <tr>
+                                                    <td colspan="2">Job Details</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>id Capgemini</td>
+                                                    <td>{{employee.idCapgemini}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>professional Community</td>
+                                                    <td>{{employee.professionalCommunity}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Role</td>
+                                                    <td>{{employee.role[0].roleName}} </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <pagination-controls (pageChange)="pages = $event" style="text-align: center;"></pagination-controls>
+
+            </div>
+        </div>
+    </div>

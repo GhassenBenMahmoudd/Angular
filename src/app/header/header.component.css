@@ -1,0 +1,49 @@
+/*
+.img-fluid {
+    max-width: 50% !important;
+    margin-right: 0% !important;
+  }
+  
+  .flex {
+    display: flex;
+  }
+
+  .profile{
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+}
+*/
+.profile{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+/*
+.side-nav-button{
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1.5rem;
+cursor: pointer;
+}
+.side-nav-button:hover{
+background-color: rgba(255, 255, 255, 0.2);
+border-radius: 30%;
+}*/
+nav{
+background-color: #B0BEC5;
+}
+
+.dropdown-item {
+  white-space: pre-wrap;
+}
+
+.unread a{
+  font-weight: bold; 
+}
+
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}

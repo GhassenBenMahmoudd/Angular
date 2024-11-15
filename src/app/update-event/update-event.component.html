@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white bg-info">
+            Modifier un événement
+        </div>   
+        <div class="card-body">
+    <form (ngSubmit) = "updateEvent()">
+    
+    <div class="form-row">
+   
+        <div class="col-md-6 mb-3">
+      <div class="form-group">
+        <label> Titre </label>
+        <input type="text" class="form-control" id="titre" [(ngModel)]="event.title" name="titre">
+  </div>
+<div class="form-group">
+    <label> Date début </label>
+    <input type="date" class="form-control" id="start" [(ngModel)]="event.start" name="start">
+</div>
+<div class="form-group">
+    <label> Date fin </label>
+    <input type="date" class="form-control" id="end" [(ngModel)]="event.end" name="end">
+</div>
+
+
+<div class="text-right">
+    <button class="btn btn-success" type="submit">Modifier</button>
+    </div>
+</div> 
+</div></form></div></div></div>
+
+
+    
