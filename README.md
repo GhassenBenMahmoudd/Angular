@@ -3,7 +3,7 @@ Ce projet consiste à développer une application web de gestion des ressources 
 
 ### Fonctionnalités principales :
 - **Gestion des employés** : Ajout, modification, consultation, et archivage des employés.
-- - **Gestion de pointage ** : Ajout, modification, consultation, et archivage des poointages.
+- **Gestion de pointages** : Ajout, modification, consultation, et archivage des poointages.
 - **Gestion des formations** : Création, modification, et affectation des sessions de formation.
 - **Gestion des événements** : Ajout et consultation d'événements dans un calendrier interactif.
 - **Notifications** : Alertes pour les échéances de contrat, de passeport, ou de visa.
