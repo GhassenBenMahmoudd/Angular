@@ -36,7 +36,7 @@ L'application suit une architecture client-serveur avec une communication via de
 - **Encadrants** : Soissi Amir et Louati Abdallah
 
 ### Diagramme de classe global :
-![image](https://github.com/user-attachments/assets/8896ee43-dffa-4a81-98f8-2c381fee220d)
+![image](https://github.com/user-attachments/assets/ccba9b40-e1bc-444b-97de-014d1c2fdf3d)
 
 
 ### Version JDKs : 19 
